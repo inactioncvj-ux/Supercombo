@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChargeRoute KR Mockup</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="logo">⚡</div>
+          <div>
+            <h1>ChargeRoute KR</h1>
+            <p>테슬라 한국형 충전 라우팅 목업</p>
+          </div>
+        </div>
+
+        <section class="card form-card">
+          <h2>주행 조건</h2>
+          <div class="field-grid">
+            <label>
+              출발지
+              <select id="origin">
+                <option>서울</option>
+                <option>판교</option>
+                <option>대전</option>
+                <option>대구</option>
+              </select>
+            </label>
+            <label>
+              목적지
+              <select id="destination">
+                <option>부산</option>
+                <option>강릉</option>
+                <option>광주</option>
+                <option>전주</option>
+              </select>
+            </label>
+            <label>
+              현재 배터리(%)
+              <input id="soc" type="range" min="10" max="100" value="62" />
+              <span id="socValue">62%</span>
+            </label>
+            <label>
+              외기온도(℃)
+              <input id="temp" type="range" min="-15" max="35" value="4" />
+              <span id="tempValue">4℃</span>
+            </label>
+            <label>
+              차종
+              <select id="model">
+                <option value="y">Model Y Long Range</option>
+                <option value="3">Model 3 Long Range</option>
+                <option value="rwd">Model Y RWD</option>
+              </select>
+            </label>
+            <label>
+              운전 스타일
+              <select id="style">
+                <option value="balanced">균형형</option>
+                <option value="fast">고속 우선</option>
+                <option value="safe">안전 잔량 우선</option>
+              </select>
+            </label>
+          </div>
+          <button id="simulateBtn">추천 경로 시뮬레이션</button>
+        </section>
+
+        <section class="card notes-card">
+          <h2>제품 포인트</h2>
+          <ul>
+            <li>한국 고속도로 DC콤보 휴게소 경유지 추천</li>
+            <li>도착 예상 잔량 기반 추천</li>
+            <li>프리히팅 시작 타이밍 안내</li>
+            <li>슈퍼차저 없는 구간의 충전 전략 시뮬레이션</li>
+          </ul>
+        </section>
+      </aside>
+
+      <main class="main">
+        <section class="hero card">
+          <div>
+            <p class="eyebrow">MVP MOCKUP</p>
+            <h2>한국형 테슬라 충전 경유 추천</h2>
+            <p>
+              실시간 Tesla API 연동 전 단계의 제품 목업. 현재는 샘플 데이터를 기반으로
+              경유 충전소, 예상 도착 잔량, 프리히팅 권장 타이밍을 시뮬레이션합니다.
+            </p>
+          </div>
+          <div class="hero-stats">
+            <div><strong id="tripDistance">325km</strong><span>예상 거리</span></div>
+            <div><strong id="tripTime">3시간 58분</strong><span>총 소요</span></div>
+            <div><strong id="arrivalSoc">14%</strong><span>도착 잔량</span></div>
+          </div>
+        </section>
+
+        <section class="content-grid">
+          <section class="card map-card">
+            <div class="section-head">
+              <h3>경로 미리보기</h3>
+              <span class="badge">목업 지도</span>
+            </div>
+            <div class="route-visual" id="routeVisual"></div>
+          </section>
+
+          <section class="card recommendation-card">
+            <div class="section-head">
+              <h3>추천 충전 전략</h3>
+              <span class="badge accent">Premium 후보</span>
+            </div>
+            <div id="recommendations"></div>
+          </section>
+        </section>
+
+        <section class="card timeline-card">
+          <div class="section-head">
+            <h3>프리히팅 / 충전 타임라인</h3>
+            <span class="badge">Driver Assist</span>
+          </div>
+          <div id="timeline"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

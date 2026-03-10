@@ -1,0 +1,48 @@
+[
+  {
+    "station_id": "추풍령휴게소-up",
+    "display_name": "추풍령휴게소(서울방향)",
+    "rest_area_name": "추풍령휴게소",
+    "highway_name": "경부고속도로",
+    "direction": "상행/서울방향",
+    "lat": 36.216,
+    "lng": 128.004,
+    "is_dc_combo": true,
+    "max_kw": 100.0,
+    "operator": "환경부",
+    "status": "available",
+    "detour_cost_score": null,
+    "tesla_compatibility_score": null,
+    "reliability_score": null,
+    "source_refs": [
+      {
+        "source": "env",
+        "source_station_id": "ENV-001",
+        "source_charger_id": "1"
+      }
+    ]
+  },
+  {
+    "station_id": "선산휴게소-down",
+    "display_name": "선산휴게소(부산방향)",
+    "rest_area_name": "선산휴게소",
+    "highway_name": "경부고속도로",
+    "direction": "하행/반대방향",
+    "lat": 36.241,
+    "lng": 128.302,
+    "is_dc_combo": true,
+    "max_kw": 100.0,
+    "operator": "환경부",
+    "status": "available",
+    "detour_cost_score": null,
+    "tesla_compatibility_score": null,
+    "reliability_score": null,
+    "source_refs": [
+      {
+        "source": "env",
+        "source_station_id": "ENV-002",
+        "source_charger_id": "1"
+      }
+    ]
+  }
+]
